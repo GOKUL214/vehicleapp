@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+<center>
+    <h2 style="margin-top: 40px;font-size: xx-large;color: darkblue;margin-bottom: 61px;">VEHICLE DETAILS</h2>
+</center>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 ">
+            <img src="{{detail.image.url}}" width="300" height="300">
+
+        </div>
+        <div class="col-md-6">
+           <h4> {{detail.number}}</h4>
+            <h6>{{detail.type}}</h6>
+            <h6>{{detail.model}}</h6>
+            <p>{{detail.description}}</p>
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+

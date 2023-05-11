@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <img src="{% static 'img/bannerimg.png' %}" alt="banner image" style=" margin-top: 10px;">
+    </div>
+</div>
+
+<center>
+    <h2 style="text-align:center;margin-top: 20px;">About Us</h2>
+</center>
+
+
+<div class="container"style="padding-left: 80px;    margin-bottom: 20px;">
+    <div class="row">
+
+        <div>
+            <p style="text-align: justify;">Welcome to our vehicle-centric website, your ultimate destination for all things related to vehicles. Whether you're a car enthusiast, a prospective buyer, or simply looking for valuable information, we've got you covered. Explore our comprehensive database of vehicle models, specifications, and features to make informed decisions. Stay up to date with the latest industry news, expert reviews, and comparisons. Our platform also offers services such as finding dealerships, scheduling test drives, and obtaining financing options. Join our community of passionate automotive enthusiasts, share your experiences, and connect with like-minded individuals. Start your journey towards a thrilling and fulfilling vehicle ownership experience with our reliable and informative resources.</p>
+        </div>
+    </div>
+</div>
+
+<center>
+    <h2 style="margin-top:25px;font-size: xx-large;color: darkblue;margin-bottom: 23px;">VEHICLE DETAILS</h2>
+</center>
+
+
+
+<div class="container"style="padding-left: 80px;">
+    <div class="row">
+
+        {% for i in result %}
+        <div class="col-md-3" style="padding-top:10px; padding-bottom:10px;">
+            <div class="card" >
+                <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" width="250px" height="161px">
+                <div class="card-body" >
+                <h5 class="card-title" style="height:50px">{{i.number}}</h5>
+                 <a href="{% url 'details' i.id %}" class="btn btn-primary">Details</a>
+
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+
+    </div>
+
+</div>
+
+{% endblock %}
